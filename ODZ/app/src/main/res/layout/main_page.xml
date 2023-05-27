@@ -9,6 +9,7 @@
     android:background="@drawable/wrap"
     android:clipToOutline="true">
 
+    <!--Header-->
     <View
         android:id="@+id/rectangle_header"
         android:layout_width="412dp"
@@ -34,6 +35,7 @@
         app:layout_constraintTop_toTopOf="@+id/rectangle_header"
         app:layout_constraintVertical_bias="0.5" />
 
+    <!--Add film-->
     <View
         android:id="@+id/add_film"
         android:layout_width="136dp"
@@ -58,6 +60,7 @@
         app:layout_constraintStart_toStartOf="@+id/add_film"
         app:layout_constraintTop_toTopOf="@+id/add_film" />
 
+    <!--Add series-->
     <View
         android:id="@+id/add_series"
         android:layout_width="136dp"
@@ -81,6 +84,7 @@
         app:layout_constraintStart_toStartOf="@+id/add_series"
         app:layout_constraintTop_toTopOf="@+id/add_series" />
 
+    <!--Add book-->
     <View
         android:id="@+id/add_book"
         android:layout_width="136dp"
@@ -103,5 +107,158 @@
         app:layout_constraintEnd_toEndOf="@+id/add_book"
         app:layout_constraintStart_toStartOf="@+id/add_book"
         app:layout_constraintTop_toTopOf="@+id/add_book" />
+
+<!--List item mock-->
+    <View
+        android:id="@+id/listItem"
+        android:layout_width="396dp"
+        android:layout_height="85dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/list_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_series" />
+    <View
+        android:id="@+id/listItemIcon"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/film2"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem"
+        app:layout_constraintStart_toStartOf="@+id/listItem"
+        app:layout_constraintTop_toTopOf="@+id/listItem" />
+    <TextView
+        android:id="@+id/listItemText"
+        android:layout_width="220dp"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/listItem"
+        android:textAppearance="@style/listItem"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem"
+        app:layout_constraintStart_toEndOf="@+id/listItemIcon"
+        app:layout_constraintTop_toTopOf="@+id/listItem" />
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/statusOn"
+        android:textAppearance="@style/status"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem"
+        app:layout_constraintStart_toEndOf="@+id/listItemText"
+        app:layout_constraintTop_toTopOf="@+id/listItem" />
+
+<!--List item mock-->
+    <View
+        android:id="@+id/listItem1"
+        android:layout_width="396dp"
+        android:layout_height="85dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/list_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listItem" />
+    <View
+        android:id="@+id/listItemIcon1"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/series2"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem1"
+        app:layout_constraintStart_toStartOf="@+id/listItem1"
+        app:layout_constraintTop_toTopOf="@+id/listItem1" />
+    <TextView
+        android:id="@+id/listItemText1"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical"
+        android:text="Peaky Blinders"
+        android:textAppearance="@style/listItem"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem1"
+        app:layout_constraintStart_toEndOf="@+id/listItemIcon1"
+        app:layout_constraintTop_toTopOf="@+id/listItem1" />
+    <TextView
+        android:id="@+id/pages"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="7/12"
+        android:textAppearance="@style/status"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem1"
+        app:layout_constraintStart_toEndOf="@+id/listItemText1"
+        app:layout_constraintTop_toTopOf="@+id/listItem1" />
+
+<!--List item mock-->
+    <View
+        android:id="@+id/listItem2"
+        android:layout_width="396dp"
+        android:layout_height="85dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/list_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listItem1" />
+    <View
+        android:id="@+id/listItemIcon2"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/book2"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem2"
+        app:layout_constraintStart_toStartOf="@+id/listItem2"
+        app:layout_constraintTop_toTopOf="@+id/listItem2" />
+    <TextView
+        android:id="@+id/listItemText2"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical"
+        android:text="Witcher"
+        android:textAppearance="@style/listItem"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem2"
+        app:layout_constraintStart_toEndOf="@+id/listItemIcon2"
+        app:layout_constraintTop_toTopOf="@+id/listItem2" />
+    <TextView
+        android:id="@+id/pages2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="7/12"
+        android:textAppearance="@style/status"
+        app:layout_constraintBottom_toBottomOf="@+id/listItem2"
+        app:layout_constraintStart_toEndOf="@+id/listItemText2"
+        app:layout_constraintTop_toTopOf="@+id/listItem2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

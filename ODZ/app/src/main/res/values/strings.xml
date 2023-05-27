@@ -6,5 +6,8 @@
     <string name="login"><u>LOGIN</u></string>
     <string name="password"><u>PASSWORD</u></string>
     <string name="email"><u>EMAIL</u></string>
-    <string name="mainHeader"><u>TO-WATCH LIST</u></string>
+    <string name="mainHeader">TO-WATCH LIST</string>
+    <string name="listItem">Drive</string>
+    <string name="statusOn">✔</string>
+    <string name="statusOff">🗙</string>
 </resources>
