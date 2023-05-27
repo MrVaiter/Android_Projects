@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="to_watch_list">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#E4E5EA</item>
+    </style>
+
+</resources>
