@@ -17,7 +17,6 @@
         <path
             android:pathData="M0 0H130V83H0V0Z"
             android:strokeWidth="4"
-            android:strokeJoin="round"
             android:strokeColor="#B7D5EC"
             />
     </group>

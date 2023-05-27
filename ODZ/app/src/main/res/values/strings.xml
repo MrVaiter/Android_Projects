@@ -10,4 +10,10 @@
     <string name="listItem">Drive</string>
     <string name="statusOn">✔</string>
     <string name="statusOff">🗙</string>
+    <string name="name"><u>Name</u></string>
+    <string name="release"><u>Release date</u></string>
+    <string name="backBtn">Back</string>
+    <string name="saveBtn">Save</string>
+    <string name="amount_of_episodes">Amount of episodes</string>
+    <string name="amount_of_pages">Amount of pages</string>
 </resources>
