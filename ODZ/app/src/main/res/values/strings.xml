@@ -6,4 +6,5 @@
     <string name="login"><u>LOGIN</u></string>
     <string name="password"><u>PASSWORD</u></string>
     <string name="email"><u>EMAIL</u></string>
+    <string name="mainHeader"><u>TO-WATCH LIST</u></string>
 </resources>
