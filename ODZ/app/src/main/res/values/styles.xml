@@ -6,4 +6,38 @@
         <item name="android:textColor">#E4E5EA</item>
     </style>
 
+    <style name="headerText">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#E4E5EA</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:fontFamily">@font/distant</item>
+    </style>
+
+    <style name="formHeader">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#3E5468</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="input">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#E4E5EA</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="button">
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
 </resources>

@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_e9b7ec49c2d24e2588a0016fd6e80b1" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/to_watch_li"

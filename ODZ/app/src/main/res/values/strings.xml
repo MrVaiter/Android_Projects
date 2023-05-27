@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">ODZ</string>
+    <string name="app_name">TO-WATCH LIST</string>
     <string name="to_watch_list">TO-WATCH LIST</string>
+    <string name="authorization">Authorization</string>
+    <string name="registration">Registration</string>
+    <string name="login"><u>LOGIN</u></string>
+    <string name="password"><u>PASSWORD</u></string>
+    <string name="email"><u>EMAIL</u></string>
 </resources>
