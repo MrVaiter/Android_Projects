@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         Handler handler = new Handler();
         handler.postDelayed(() -> {
-            setContentView(R.layout.authorization);
+            setContentView(R.layout.main_page);
         }, 3000);
     }
 
