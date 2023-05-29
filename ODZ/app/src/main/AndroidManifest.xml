@@ -7,9 +7,9 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ODZ"
+        android:label="@string/app_name"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -20,6 +20,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AuthorizationActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".MainPageActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".EditSeriesActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".EditBookActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".EditFilmActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".AddBookActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".AddFilmActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".AddSeriesActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

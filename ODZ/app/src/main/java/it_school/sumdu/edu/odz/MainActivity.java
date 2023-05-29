@@ -1,14 +1,12 @@
 package it_school.sumdu.edu.odz;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
         Handler handler = new Handler();
         handler.postDelayed(() -> {
-            setContentView(R.layout.main_page);
+            Intent intent = new Intent(MainActivity.this, AuthorizationActivity.class);
+            startActivity(intent);
+            finish();
         }, 3000);
     }
-
-
 }
