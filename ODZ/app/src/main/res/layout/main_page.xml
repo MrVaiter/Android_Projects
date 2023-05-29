@@ -110,25 +110,26 @@
     <ScrollView
         android:id="@+id/listItems"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="160dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_book">
 
         <LinearLayout
             android:id="@+id/list"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <!--Add film-->
             <LinearLayout
                 android:id="@+id/listItem1"
-                android:orientation="horizontal"
                 android:layout_width="396dp"
                 android:layout_height="85dp"
-                android:layout_marginTop="7dp"
                 android:layout_marginStart="7dp"
-                android:background="@drawable/list_item">
+                android:layout_marginTop="7dp"
+                android:background="@drawable/list_item"
+                android:orientation="horizontal">
 
                 <View
                     android:id="@+id/filmIcon1"
@@ -138,6 +139,7 @@
                     android:layout_marginTop="7dp"
                     android:background="@drawable/film2"
                     android:elevation="4dp" />
+
                 <TextView
                     android:id="@+id/listItemText"
                     android:layout_width="220dp"
@@ -146,28 +148,29 @@
                     android:layout_marginTop="15dp"
                     android:gravity="center_vertical"
                     android:text="@string/listItem"
-                    android:textAppearance="@style/listItem"/>
+                    android:textAppearance="@style/listItem" />
+
                 <TextView
                     android:id="@+id/status"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/statusOn"
-                    android:textAppearance="@style/status"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:textAppearance="@style/status" />
 
             </LinearLayout>
 
             <!--Add series-->
             <LinearLayout
                 android:id="@+id/listItem2"
-                android:orientation="horizontal"
                 android:layout_width="396dp"
                 android:layout_height="85dp"
-                android:layout_marginTop="7dp"
                 android:layout_marginStart="7dp"
-                android:background="@drawable/list_item">
+                android:layout_marginTop="7dp"
+                android:background="@drawable/list_item"
+                android:orientation="horizontal">
 
                 <View
                     android:id="@+id/seriesIcon1"
@@ -177,6 +180,7 @@
                     android:layout_marginTop="7dp"
                     android:background="@drawable/series2"
                     android:elevation="4dp" />
+
                 <TextView
                     android:id="@+id/seriesText"
                     android:layout_width="220dp"
@@ -185,28 +189,29 @@
                     android:layout_marginTop="15dp"
                     android:gravity="center_vertical"
                     android:text="Peaky Blinders"
-                    android:textAppearance="@style/listItem"/>
+                    android:textAppearance="@style/listItem" />
+
                 <TextView
                     android:id="@+id/status2"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="7/13"
-                    android:textAppearance="@style/status"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:textAppearance="@style/status" />
 
             </LinearLayout>
 
             <!--Add book-->
             <LinearLayout
                 android:id="@+id/listItem3"
-                android:orientation="horizontal"
                 android:layout_width="396dp"
                 android:layout_height="85dp"
-                android:layout_marginTop="7dp"
                 android:layout_marginStart="7dp"
-                android:background="@drawable/list_item">
+                android:layout_marginTop="7dp"
+                android:background="@drawable/list_item"
+                android:orientation="horizontal">
 
                 <View
                     android:id="@+id/bookIcon1"
@@ -216,6 +221,7 @@
                     android:layout_marginTop="7dp"
                     android:background="@drawable/book2"
                     android:elevation="4dp" />
+
                 <TextView
                     android:id="@+id/bookText"
                     android:layout_width="190dp"
@@ -224,18 +230,20 @@
                     android:layout_marginTop="15dp"
                     android:gravity="center_vertical"
                     android:text="Witcher"
-                    android:textAppearance="@style/listItem"/>
+                    android:textAppearance="@style/listItem" />
+
                 <TextView
                     android:id="@+id/status3"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="120/227"
-                    android:textAppearance="@style/status"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:textAppearance="@style/status" />
 
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
