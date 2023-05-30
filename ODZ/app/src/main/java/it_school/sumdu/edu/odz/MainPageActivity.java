@@ -30,7 +30,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.add_book:
                 intent = new Intent(MainPageActivity.this, AddBookActivity.class);
-                break;    
+                break;
         }
 
         startActivity(intent);
