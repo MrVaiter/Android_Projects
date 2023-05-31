@@ -7,9 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
     public DatabaseHelper(Context context ) {
-        super(context,"UserData",null, 1);
+        super(context,"accounts",null, 1);
     }
 
     @Override
@@ -22,12 +21,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists UserDetails");
     }
 
-    public Boolean insertUserData(Integer ID, String login, String email, String password){
+    public Boolean insertUserData(Integer id, String login, String email, String password){
         SQLiteDatabase DB = this.getWritableDatabase();
-
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put("ID", ID);
+        contentValues.put("ID", id);
         contentValues.put("login", login);
         contentValues.put("email", email);
         contentValues.put("password", password);
@@ -46,9 +44,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public int getNewID() {
+    public Integer getNewId(){
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from accounts ",null);
-        return cursor.getCount();
+        return cursor.getCount() + 1;
+    }
+
+    public Cursor getAccount(String login){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        return DB.rawQuery("Select * from accounts WHERE login = '" + login + "'",null);
     }
 }

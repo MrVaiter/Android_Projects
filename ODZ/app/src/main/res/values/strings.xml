@@ -16,4 +16,5 @@
     <string name="saveBtn">Save</string>
     <string name="amount_of_episodes">Amount of episodes</string>
     <string name="amount_of_pages">Amount of pages</string>
+    <string name="repeat"><u>REPEAT PASSWORD</u></string>
 </resources>

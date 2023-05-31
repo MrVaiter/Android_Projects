@@ -136,7 +136,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="@string/password"
+        android:text="@string/repeat"
         android:textAppearance="@style/formHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
