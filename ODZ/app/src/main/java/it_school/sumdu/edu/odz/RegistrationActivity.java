@@ -24,7 +24,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
 
-        Integer ID = db.getNewId();
+        Integer ID = db.getNewUserId();
         String login = ((EditText) findViewById(R.id.loginInput)).getText().toString();
         String email = ((EditText) findViewById(R.id.emailInput)).getText().toString();
         String password = ((EditText) findViewById(R.id.passInput)).getText().toString();
