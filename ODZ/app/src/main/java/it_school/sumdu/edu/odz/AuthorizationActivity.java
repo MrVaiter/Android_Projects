@@ -48,6 +48,9 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
                     Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(AuthorizationActivity.this, MainPageActivity.class);
+
+                    intent.putExtra("userID", result.getString(0));
+
                     startActivity(intent);
                     finish();
                 } else {

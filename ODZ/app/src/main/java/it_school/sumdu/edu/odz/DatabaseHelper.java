@@ -23,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                         "full_amount NUMBER, " +
                                         "done NUMBER, " +
                                         "release_date TEXT, " +
+                                        "type TEXT, " +
                                         "userID NUMBER, " +
                                         "FOREIGN KEY (userID) REFERENCES accounts(ID))");
     }
