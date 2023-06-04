@@ -1,10 +1,12 @@
 package it_school.sumdu.edu.odz;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,13 +43,17 @@ public class AddFilmActivity extends AppCompatActivity implements View.OnClickLi
         Integer id = db.getNewContentId();
         String title = ((EditText) findViewById(R.id.nameInput)).getText().toString();
         String userID = getIntent().getStringExtra("userID");
+        String day = ((Spinner) findViewById(R.id.day_spinner)).getSelectedItem().toString();
+        String month = ((Spinner) findViewById(R.id.month_spinner)).getSelectedItem().toString();
+        String year = ((Spinner) findViewById(R.id.year_spinner)).getSelectedItem().toString();
+        String formattedDate = day + "-" + month + "-" + year;
 
-        long datestamp = ((CalendarView) findViewById(R.id.releaseDatePicker)).getDate();
-        Date date = new Date(datestamp);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        String formattedDate = sdf.format(date);
+        if(db.getContent(title).getCount() != 0){
+            Toast.makeText(this, "Film already exists", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        Boolean result = db.insertContentData(id, title, 1, 1, formattedDate, Integer.parseInt(userID));
+        Boolean result = db.insertContentData(id, title, 1, 0, formattedDate, "film", Integer.parseInt(userID));
 
         if(result){
             Intent intent = new Intent(AddFilmActivity.this, MainPageActivity.class);

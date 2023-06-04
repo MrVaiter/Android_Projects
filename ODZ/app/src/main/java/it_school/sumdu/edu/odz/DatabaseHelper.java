@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context ) {
-        super(context,"twl",null, 1);
+        super(context,"twl",null, 2);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 //    Content
-    public Boolean insertContentData(Integer id, String title, Integer full_amount, Integer done, String release_date, Integer userID){
+    public Boolean insertContentData(Integer id, String title, Integer full_amount, Integer done, String release_date, String type, Integer userID){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -75,6 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("full_amount", full_amount);
         contentValues.put("done", done);
         contentValues.put("release_date", release_date);
+        contentValues.put("type", type);
         contentValues.put("userID", userID);
 
         long result= DB.insert("content",null,contentValues);
@@ -89,6 +90,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from content ",null);
         return cursor;
+    }
+
+    public Cursor getContent(String title){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        return DB.rawQuery("Select * from content WHERE title = '" + title + "'",null);
     }
 
     public Integer getNewContentId(){
