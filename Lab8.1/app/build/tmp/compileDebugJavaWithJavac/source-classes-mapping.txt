@@ -1,0 +1,6 @@
+com/example/android/simpleasynctask/BuildConfig.java
+ com.example.android.simpleasynctask.BuildConfig
+com/example/android/simpleasynctask/MainActivity.java
+ com.example.android.simpleasynctask.MainActivity
+com/example/android/simpleasynctask/SimpleAsyncTask.java
+ com.example.android.simpleasynctask.SimpleAsyncTask
