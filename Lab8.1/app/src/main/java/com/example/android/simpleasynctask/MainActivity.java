@@ -18,6 +18,7 @@ package com.example.android.simpleasynctask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -32,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
     // The TextView where we will show results
     private TextView mTextView;
-
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mTextView = findViewById(R.id.textView1);
+        progressBar = findViewById(R.id.progressBar);
 
         // Restore TextView if there is a savedInstanceState bundle.
         if (savedInstanceState != null) {
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Start the AsyncTask.
         // The AsyncTask has a callback that will update the text view.
-        new SimpleAsyncTask(mTextView).execute();
+        new SimpleAsyncTask(mTextView, progressBar).execute();
     }
 
     /**
