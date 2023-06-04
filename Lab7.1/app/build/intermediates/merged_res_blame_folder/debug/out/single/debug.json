@@ -8,6 +8,10 @@
         "source": "D:\\Android_Projects\\Lab7.1\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Android_Projects\\Lab7.1\\app\\build\\intermediates\\merged_res\\debug\\layout_second_activity.xml.flat",
+        "source": "D:\\Android_Projects\\Lab7.1\\app\\src\\main\\res\\layout\\second_activity.xml"
+    },
+    {
         "merged": "D:\\Android_Projects\\Lab7.1\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\Android_Projects\\Lab7.1\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },

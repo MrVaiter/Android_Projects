@@ -39,6 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.android.fragmentexample.SecondActivity" >
+        </activity>
 
         <meta-data
             android:name="android.support.VERSION"

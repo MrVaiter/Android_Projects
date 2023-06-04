@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
-INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
-INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
-INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
+ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
+INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
+INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
+INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
 MERGED from [com.android.support:appcompat-v7:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\01682c24350291d64805c3cd48cf426a\transformed\appcompat-v7-26.0.1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\1f99b1bd46d21629e32f0175cc5b1145\transformed\support-v4-26.0.1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-fragment:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\37809d8a5b03a4ca72987b022f4af653\transformed\support-fragment-26.0.1\AndroidManifest.xml:17:1-31:12
@@ -14,25 +14,25 @@ MERGED from [com.android.support:support-core-ui:26.0.1] C:\Users\mrvai\.gradle\
 MERGED from [com.android.support:support-core-utils:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\8523161f3d990f73c6df0ea5b4c65c56\transformed\support-core-utils-26.0.1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-media-compat:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\52ac705b976c1b9211f216891092eeb7\transformed\support-media-compat-26.0.1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\fcfb3ea2d1984cf7a188f7679134d867\transformed\support-compat-26.0.1\AndroidManifest.xml:17:1-31:12
-INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
-INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
-INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
+INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
+INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
+INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
 	package
 		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:19:5-50
 		INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
+		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
 		INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml
-		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-37:12
+		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:1-39:12
 		INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:18:11-69
 application
-ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:21:5-35:19
+ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:21:5-37:19
 MERGED from [com.android.support:appcompat-v7:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\01682c24350291d64805c3cd48cf426a\transformed\appcompat-v7-26.0.1\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\01682c24350291d64805c3cd48cf426a\transformed\appcompat-v7-26.0.1\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.0.1] C:\Users\mrvai\.gradle\caches\transforms-3\1f99b1bd46d21629e32f0175cc5b1145\transformed\support-v4-26.0.1\AndroidManifest.xml:25:5-29:19
@@ -79,6 +79,10 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
 		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:32:27-74
+activity#com.example.android.fragmentexample.SecondActivity
+ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:35:9-36:20
+	android:name
+		ADDED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml:35:19-49
 uses-sdk
 INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Android_Projects\Lab7.1\app\src\main\AndroidManifest.xml

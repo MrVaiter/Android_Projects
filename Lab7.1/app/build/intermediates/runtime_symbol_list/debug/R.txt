@@ -694,6 +694,7 @@ int id message 0x7f070046
 int id middle 0x7f070047
 int id multiply 0x7f070048
 int id never 0x7f070049
+int id next_button 0x7f070089
 int id none 0x7f07004a
 int id normal 0x7f07004b
 int id notification_background 0x7f07004c
@@ -703,6 +704,7 @@ int id open_button 0x7f07004f
 int id packed 0x7f070050
 int id parent 0x7f070051
 int id parentPanel 0x7f070052
+int id previous_button 0x7f07008a
 int id progress_circular 0x7f070053
 int id progress_horizontal 0x7f070054
 int id radio 0x7f070055
@@ -806,6 +808,7 @@ int layout notification_template_media 0x7f090028
 int layout notification_template_media_custom 0x7f090029
 int layout notification_template_part_chronometer 0x7f09002a
 int layout notification_template_part_time 0x7f09002b
+int layout second_activity 0x7f090031
 int layout select_dialog_item_material 0x7f09002c
 int layout select_dialog_multichoice_material 0x7f09002d
 int layout select_dialog_singlechoice_material 0x7f09002e
