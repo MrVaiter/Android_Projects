@@ -92,14 +92,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor getContent(String title){
+    public Cursor getContent(String title, String user){
         SQLiteDatabase DB = this.getWritableDatabase();
-        return DB.rawQuery("Select * from content WHERE title = '" + title + "'",null);
+        return DB.rawQuery("Select * from content WHERE title = '" + title + "' AND userID = '" + user + "'",null);
     }
 
-    public Integer getNewContentId(){
+    public Integer getNewContentId(String user){
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from content ",null);
+        Cursor cursor = DB.rawQuery("Select * from content WHERE userID = '" + user + "'",null);
         return cursor.getCount() + 1;
+    }
+
+    public Boolean deleteContent(String title){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        return true;
     }
 }

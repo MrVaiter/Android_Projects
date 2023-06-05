@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat;
 public class MainPageActivity extends AppCompatActivity implements View.OnClickListener{
 
     DatabaseHelper db;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,10 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.add_film).setOnClickListener(this);
         findViewById(R.id.add_series).setOnClickListener(this);
         findViewById(R.id.add_book).setOnClickListener(this);
+        findViewById(R.id.rectangle_header).setOnClickListener(this);
 
         db = new DatabaseHelper(this);
+        userID = getIntent().getStringExtra("userID");
 
         ViewContent();
     }
@@ -46,16 +49,17 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
             case R.id.add_book:
                 intent = new Intent(MainPageActivity.this, AddBookActivity.class);
                 break;
+            case R.id.rectangle_header:
+                intent = new Intent(MainPageActivity.this, EditorActivity.class);
+                break;
         }
 
-        String userID = getIntent().getStringExtra("userID");
         intent.putExtra("userID", userID);
         startActivity(intent);
         finish();
     }
 
     public void ViewContent(){
-        String userID = getIntent().getStringExtra("userID");
         Cursor result = db.getContentData(userID);
 
         if(result.getCount() == 0){
@@ -236,6 +240,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
         list.addView(linearLayout);
     }
+
     private int dpToPx(int dp) {
         float scale = getResources().getDisplayMetrics().density;
         return (int) (dp * scale + 0.5f);

@@ -32,7 +32,6 @@ public class AddBookActivity extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-        Integer id = db.getNewContentId();
         String title = ((EditText) findViewById(R.id.nameInput)).getText().toString();
         String userID = getIntent().getStringExtra("userID");
         String amount = ((EditText) findViewById(R.id.amountNumber)).getText().toString();
@@ -42,7 +41,9 @@ public class AddBookActivity extends AppCompatActivity implements View.OnClickLi
         String year = ((Spinner) findViewById(R.id.year_spinner)).getSelectedItem().toString();
         String formattedDate = day + "-" + month + "-" + year;
 
-        if(db.getContent(title).getCount() != 0){
+        Integer id = db.getNewContentId(userID);
+
+        if(db.getContent(title, userID).getCount() != 0){
             Toast.makeText(this, "Series already exists", Toast.LENGTH_SHORT).show();
             return;
         }
