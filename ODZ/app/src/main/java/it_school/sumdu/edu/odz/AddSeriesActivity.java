@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,10 +43,10 @@ public class AddSeriesActivity extends AppCompatActivity implements View.OnClick
         String userID = getIntent().getStringExtra("userID");
         String amount = ((EditText) findViewById(R.id.amountNumber)).getText().toString();
 
-        long datestamp = ((CalendarView) findViewById(R.id.releaseDatePicker)).getDate();
-        Date date = new Date(datestamp);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        String formattedDate = sdf.format(date);
+        String day = ((Spinner) findViewById(R.id.day_spinner)).getSelectedItem().toString();
+        String month = ((Spinner) findViewById(R.id.month_spinner)).getSelectedItem().toString();
+        String year = ((Spinner) findViewById(R.id.year_spinner)).getSelectedItem().toString();
+        String formattedDate = day + "-" + month + "-" + year;
 
         if(db.getContent(title).getCount() != 0){
             Toast.makeText(this, "Series already exists", Toast.LENGTH_SHORT).show();

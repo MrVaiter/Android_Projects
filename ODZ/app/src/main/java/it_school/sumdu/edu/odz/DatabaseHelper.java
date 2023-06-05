@@ -86,9 +86,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getContentData(){
+    public Cursor getContentData(String user){
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from content ",null);
+        Cursor cursor = DB.rawQuery("Select * from content WHERE userID = '" + user + "'",null);
         return cursor;
     }
 

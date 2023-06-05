@@ -1,5 +1,6 @@
 package it_school.sumdu.edu.odz;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -54,8 +55,8 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void ViewContent(){
-
-        Cursor result = db.getContentData();
+        String userID = getIntent().getStringExtra("userID");
+        Cursor result = db.getContentData(userID);
 
         if(result.getCount() == 0){
             return;
@@ -131,7 +132,8 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void showSeries(LinearLayout list, Cursor raw){
-        Integer id = Integer.parseInt(raw.getString(0));
+        int id = Integer.parseInt(raw.getString(0));
+        String date = raw.getString(4);
 
         // ListItem
         LinearLayout linearLayout = new LinearLayout(this);
@@ -154,7 +156,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         // Title
         TextView title = new TextView(this);
         title.setText(raw.getString(1));
-        LinearLayout.LayoutParams title_param = new LinearLayout.LayoutParams(dpToPx(240), dpToPx(44));
+        LinearLayout.LayoutParams title_param = new LinearLayout.LayoutParams(dpToPx(220), dpToPx(44));
         title_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);
         title.setLayoutParams(title_param);
         title.setTextAppearance(R.style.listItem);
@@ -167,19 +169,24 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         if(raw.getString(2).equals(raw.getString(3))){
             status.setText("✔");
         } else {
-            status.setText("✖");
+            String episodesStatus = raw.getString(3) + "/" + raw.getString(2);
+            status.setText(episodesStatus);
         }
-        LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(50), dpToPx(50));
+
+        LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(100), dpToPx(50));
         status_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);
         status.setLayoutParams(status_param);
         status.setTextAppearance(R.style.listItem);
         linearLayout.addView(status);
 
+        linearLayout.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Release date: " + date, Toast.LENGTH_SHORT).show());
+
         list.addView(linearLayout);
     }
 
     private void showBook(LinearLayout list, Cursor raw){
-        Integer id = Integer.parseInt(raw.getString(0));
+        int id = Integer.parseInt(raw.getString(0));
+        String date = raw.getString(4);
 
         // ListItem
         LinearLayout linearLayout = new LinearLayout(this);
@@ -202,7 +209,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         // Title
         TextView title = new TextView(this);
         title.setText(raw.getString(1));
-        LinearLayout.LayoutParams title_param = new LinearLayout.LayoutParams(dpToPx(240), dpToPx(44));
+        LinearLayout.LayoutParams title_param = new LinearLayout.LayoutParams(dpToPx(210), dpToPx(44));
         title_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);
         title.setLayoutParams(title_param);
         title.setTextAppearance(R.style.listItem);
@@ -215,13 +222,17 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         if(raw.getString(2).equals(raw.getString(3))){
             status.setText("✔");
         } else {
-            status.setText("✖");
+            String episodesStatus = raw.getString(3) + "/" + raw.getString(2);
+            status.setText(episodesStatus);
         }
-        LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(50), dpToPx(50));
+
+        LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(100), dpToPx(50));
         status_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);
         status.setLayoutParams(status_param);
         status.setTextAppearance(R.style.listItem);
         linearLayout.addView(status);
+
+        linearLayout.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Release date: " + date, Toast.LENGTH_SHORT).show());
 
         list.addView(linearLayout);
     }
