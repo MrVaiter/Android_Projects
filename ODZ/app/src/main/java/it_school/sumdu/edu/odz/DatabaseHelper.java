@@ -56,8 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Integer getNewUserId(){
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from accounts ",null);
-        return cursor.getCount() + 1;
+        Cursor cursor = DB.rawQuery("Select MAX(ID)+1 from accounts ",null);
+        cursor.moveToFirst();
+        return Integer.parseInt(cursor.getString(0));
     }
 
     public Cursor getAccount(String login){
@@ -99,12 +100,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Integer getNewContentId(String user){
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from content WHERE userID = '" + user + "'",null);
-        return cursor.getCount() + 1;
+        Cursor cursor = DB.rawQuery("Select MAX(ID)+1 from content WHERE userID = '" + user + "'",null);
+        cursor.moveToFirst();
+        return Integer.parseInt(cursor.getString(0));
     }
 
-    public Boolean deleteContent(String title){
+    public Boolean deleteContent(String title, String user){
         SQLiteDatabase DB = this.getWritableDatabase();
-        return true;
+        int result = DB.delete("content", "title='" + title + "' AND userID='" + user + "'", null);
+        return result != 0;
     }
 }

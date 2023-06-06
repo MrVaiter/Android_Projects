@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,7 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
 
         String title = ((Spinner) findViewById(R.id.choose_content)).getSelectedItem().toString();
+        Boolean result;
 
         switch (view.getId()){
             case R.id.rectangle_header:
@@ -45,22 +47,51 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
                 finish();
                 break;
             case R.id.editBtn:
-                editContent(title);
+                editContent(title, userID);
                 break;
             case R.id.deleteBtn:
-                db.deleteContent(title);
+                result = db.deleteContent(title, userID);
+                contentList.remove(title);
+                updateList();
+
+                if(result){
+                    Toast.makeText(this, title + " deleted successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Deleting failed", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
 
     }
 
-    public void editContent(String title){
+    public void editContent(String title, String user){
+
+        Cursor result = db.getContent(title, user);
+        result.moveToNext();
+        String type = result.getString(5);
+
+        Intent intent;
+
+        switch (type){
+            case "film":
+                intent = new Intent(EditorActivity.this, EditFilmActivity.class);
+                break;
+            case "series":
+                intent = new Intent(EditorActivity.this, EditSeriesActivity.class);
+                break;
+            case "book":
+                intent = new Intent(EditorActivity.this, EditBookActivity.class);
+                break;
+        }
+
+
 
     }
 
 
     public void uploadList(){
-        List<String> contentList = new ArrayList<>();
+        contentList = new ArrayList<>();
 
         Cursor result = db.getContentData(userID);
         while (result.moveToNext()){
