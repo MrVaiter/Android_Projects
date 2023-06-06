@@ -69,7 +69,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         LinearLayout list = findViewById(R.id.list);
 
         while (result.moveToNext()) {
-            switch (result.getString(5)){
+            switch (result.getString(4)){
                 case "film":
                     showFilm(list, result);
                     break;
@@ -86,7 +86,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
     private void showFilm(LinearLayout list, Cursor raw){
         int id = Integer.parseInt(raw.getString(0));
-        String date = raw.getString(4);
+        String date = raw.getString(3);
 
         // ListItem
         LinearLayout linearLayout = new LinearLayout(this);
@@ -99,7 +99,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
         // Icon
         View icon = new View(this);
-        icon.setBackground(ContextCompat.getDrawable(this, R.drawable.book2));
+        icon.setBackground(ContextCompat.getDrawable(this, R.drawable.film2));
         LinearLayout.LayoutParams icon_params = new LinearLayout.LayoutParams(dpToPx(68), dpToPx(68));
         icon_params.setMargins(dpToPx(10), dpToPx(7), 0, 0);
         icon.setLayoutParams(icon_params);
@@ -117,19 +117,6 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
         title.setEllipsize(TextUtils.TruncateAt.END);
         linearLayout.addView(title);
 
-        // Status
-        TextView status = new TextView(this);
-        if(raw.getString(2).equals(raw.getString(3))){
-            status.setText("✔");
-        } else {
-            status.setText("✖");
-        }
-        LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(50), dpToPx(50));
-        status_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);
-        status.setLayoutParams(status_param);
-        status.setTextAppearance(R.style.listItem);
-        linearLayout.addView(status);
-
         linearLayout.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Release date: " + date, Toast.LENGTH_SHORT).show());
 
         list.addView(linearLayout);
@@ -137,7 +124,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
     private void showSeries(LinearLayout list, Cursor raw){
         int id = Integer.parseInt(raw.getString(0));
-        String date = raw.getString(4);
+        String date = raw.getString(3);
 
         // ListItem
         LinearLayout linearLayout = new LinearLayout(this);
@@ -170,12 +157,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
         // Status
         TextView status = new TextView(this);
-        if(raw.getString(2).equals(raw.getString(3))){
-            status.setText("✔");
-        } else {
-            String episodesStatus = raw.getString(3) + "/" + raw.getString(2);
-            status.setText(episodesStatus);
-        }
+        status.setText(raw.getString(2));
 
         LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(100), dpToPx(50));
         status_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);
@@ -190,7 +172,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
     private void showBook(LinearLayout list, Cursor raw){
         int id = Integer.parseInt(raw.getString(0));
-        String date = raw.getString(4);
+        String date = raw.getString(3);
 
         // ListItem
         LinearLayout linearLayout = new LinearLayout(this);
@@ -223,12 +205,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
         // Status
         TextView status = new TextView(this);
-        if(raw.getString(2).equals(raw.getString(3))){
-            status.setText("✔");
-        } else {
-            String episodesStatus = raw.getString(3) + "/" + raw.getString(2);
-            status.setText(episodesStatus);
-        }
+        status.setText(raw.getString(2));
 
         LinearLayout.LayoutParams status_param = new LinearLayout.LayoutParams(dpToPx(100), dpToPx(50));
         status_param.setMargins(dpToPx(15), dpToPx(25), 0, 0);

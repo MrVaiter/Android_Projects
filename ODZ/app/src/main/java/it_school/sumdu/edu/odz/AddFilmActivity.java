@@ -54,7 +54,7 @@ public class AddFilmActivity extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-        Boolean result = db.insertContentData(id, title, 1, 0, formattedDate, "film", Integer.parseInt(userID));
+        Boolean result = db.insertContentData(id, title, 1, formattedDate, "film", Integer.parseInt(userID));
 
         if(result){
             Intent intent = new Intent(AddFilmActivity.this, MainPageActivity.class);

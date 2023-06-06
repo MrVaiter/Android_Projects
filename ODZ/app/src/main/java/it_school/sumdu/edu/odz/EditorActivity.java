@@ -69,9 +69,9 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
 
         Cursor result = db.getContent(title, user);
         result.moveToNext();
-        String type = result.getString(5);
+        String type = result.getString(4);
 
-        Intent intent;
+        Intent intent = null;
 
         switch (type){
             case "film":
@@ -79,14 +79,21 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case "series":
                 intent = new Intent(EditorActivity.this, EditSeriesActivity.class);
+                intent.putExtra("amount", result.getString(2));
                 break;
             case "book":
                 intent = new Intent(EditorActivity.this, EditBookActivity.class);
+                intent.putExtra("amount", result.getString(2));
                 break;
         }
 
+        intent.putExtra("userID", userID);
+        intent.putExtra("id", result.getString(0));
+        intent.putExtra("title", result.getString(1));
+        intent.putExtra("date", result.getString(4));
 
-
+        startActivity(intent);
+        finish();
     }
 
 

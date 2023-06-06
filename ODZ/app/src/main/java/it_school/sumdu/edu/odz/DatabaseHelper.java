@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context ) {
-        super(context,"twl",null, 2);
+        super(context,"twl",null, 3);
     }
 
     @Override
@@ -21,7 +21,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         DB.execSQL("create Table content(ID NUMBER primary key, " +
                                         "title TEXT, " +
                                         "full_amount NUMBER, " +
-                                        "done NUMBER, " +
                                         "release_date TEXT, " +
                                         "type TEXT, " +
                                         "userID NUMBER, " +
@@ -58,6 +57,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select MAX(ID)+1 from accounts ",null);
         cursor.moveToFirst();
+
+        if(cursor.getString(0) == null)
+            return 1;
+
         return Integer.parseInt(cursor.getString(0));
     }
 
@@ -67,14 +70,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 //    Content
-    public Boolean insertContentData(Integer id, String title, Integer full_amount, Integer done, String release_date, String type, Integer userID){
+    public Boolean insertContentData(Integer id, String title, Integer full_amount, String release_date, String type, Integer userID){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("ID", id);
         contentValues.put("title", title);
         contentValues.put("full_amount", full_amount);
-        contentValues.put("done", done);
         contentValues.put("release_date", release_date);
         contentValues.put("type", type);
         contentValues.put("userID", userID);
@@ -102,6 +104,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select MAX(ID)+1 from content WHERE userID = '" + user + "'",null);
         cursor.moveToFirst();
+
+        if(cursor.getString(0) == null)
+            return 1;
+
         return Integer.parseInt(cursor.getString(0));
     }
 
@@ -109,5 +115,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         int result = DB.delete("content", "title='" + title + "' AND userID='" + user + "'", null);
         return result != 0;
+    }
+    public void updateContent(String id, String title, String date, String user){
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        String SQLQuery = "UPDATE content SET title = '" + title;
+        if(!date.equals("01-01-2023")){
+            SQLQuery += "', release_date = '" + date;
+        }
+        SQLQuery += "' WHERE userID='" + user + "' AND ID='" + id + "'";
+
+        DB.execSQL(SQLQuery);
+    }
+
+    public void updateContent(String id, String title, String amount, String date, String user){
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        String SQLQuery = "UPDATE content SET title = '" + title + "', full_amount ='" + amount;
+        if(!date.equals("01-01-2023")){
+            SQLQuery += "', release_date = '" + date;
+        }
+        SQLQuery += "' WHERE userID='" + user + "' AND ID='" + id + "'";
+
+        DB.execSQL(SQLQuery);
     }
 }

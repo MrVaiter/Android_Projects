@@ -57,7 +57,6 @@ public class AddSeriesActivity extends AppCompatActivity implements View.OnClick
         Boolean result = db.insertContentData(id,
                                               title,
                                               Integer.parseInt(amount),
-                                         0,
                                               formattedDate,
                                          "series",
                                               Integer.parseInt(userID));

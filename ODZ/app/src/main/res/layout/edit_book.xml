@@ -111,13 +111,36 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:text="(additional)"
                 android:textSize="16sp" />
-            <CalendarView
-                android:id="@+id/releaseDatePicker"
+            <LinearLayout
+                android:id="@+id/releaseDateLayout"
                 android:layout_width="match_parent"
-                android:layout_height="290dp"
-                android:background="#FFFFFF"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/additional"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/day_spinner"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:entries="@array/day" />
+
+                <Spinner
+                    android:id="@+id/month_spinner"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:entries="@array/month" />
+
+                <Spinner
+                    android:id="@+id/year_spinner"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:entries="@array/year" />
+
+            </LinearLayout>
 
             <!--Save&Back-->
             <LinearLayout

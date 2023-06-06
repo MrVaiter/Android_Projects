@@ -51,7 +51,6 @@ public class AddBookActivity extends AppCompatActivity implements View.OnClickLi
         Boolean result = db.insertContentData(id,
                 title,
                 Integer.parseInt(amount),
-                0,
                 formattedDate,
                 "book",
                 Integer.parseInt(userID));
